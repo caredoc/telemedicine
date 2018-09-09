@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CareDoc</title>
+    <!-- favicon -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Included css fils -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <!-- link for material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap griding -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- bootstrap grids -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
+    <style>
+    @media screen and (max-width: 870px) {
+        #baseProfile,
+        #baseChat {
+            display: none;
+        }
+        .abc {
+            display: block;
+        }
+        #base3DotsIcon {
+            width: 10%;
+            margin: -53px -30px 0px 0px;
+            font-size: 36px;
+            float: right;
+            display: inline-block;
+        }
+
+        #base3DotsIcon a {
+            color: #224155;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        /*side navigation*/
+        #baseSideNav {
+            display: none;
+            transition-duration: 5s;
+            -webkit-transition: width 2s;
+            width: 190px;
+            transition: transform .3s ease, -webkit-transform .3s ease;
+        }
+        #baseContents a {
+            padding: 15px 0px 7px 10px;
+        }
+
+        /*complete top navigation bar*/
+        #baseTopNav {
+            display: none;
+        }
+        /*ham burger icon*/
+        #baseMenuIcon {
+            width: 15%;
+            margin: 13px 0px 0px 0px;
+            display: inline-block;
+        }
+        /*3 dots icon*/
+        #base3DotsNavHidden {
+            display: none;
+        }
+
+        #base3DotsIcon {
+            width: 10%;
+            display: inline-block;
+            margin: 0px 15px 0px 0px;
+        }
+        /*icons (hamburger and 3dots)*/
+        #baseTopNavHidden a {
+            color: #224155;
+        }
+
+        #baseTopNavHidden {
+            display: block;
+        }
+        #baseTopNavHidden i {
+            font-size: 35px;
+            margin: 1% 20px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        #caredocLogoHidden {
+            height: 50px;
+            display: inline-block;
+            width: 160px;
+            vertical-align: middle;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- **************************** SideNavBar ******************************** -->
+    <section id="baseSideNav">
+        <div id="baseContents">
+            <a href="#Dashboard" style="background:#05F0C4!important;font-weight:bold"><img src="img/Dashboard.png" >Dashboard</a>
+            <a href="#Appointment"><img src="img/Appointment.png">Appointment</a>
+            <a href="#Prescriptions"><img src="img/Prescription.png">Prescriptions</a>
+            <a href="#HealthChart"><img src="img/Health Chart.png">Health Chart</a>
+            <a href="#Lab & Imaging"><img src="img/Lab and Imaging.png">Lab & Imaging</a>
+            <a href="#Services"><img src="img/Insurance.png">Insurance</a>
+            <a href="#Clients"><img src="img/Bills1.png">Bills</a>
+        </div>
+    </section>
+    <!-- ********************** SideNav Ends Here! **************************** -->
+    <!-- *************mobile view top navigation bar ***********-->
+    <div id="baseTopNavHidden">
+        <!-- menu bar -->
+        <div id="baseMenuIcon">
+            <a id="baseMenuBar" href="javascript:void(0)" rel="me"><i class="fa fa-bars" onclick="myFunction()" aria-hidden="true"></i></a>
+        </div>
+        <!-- caredoc logo -->
+        <div style="width: 69%;text-align: center;    display: inline-block;">
+            <img id="caredocLogoHidden" src="img/caredocLogo.png">
+        </div>
+        <!-- 3 dots icon -->
+        <div id="base3DotsIcon">
+            <a id="base3Dots" href="javascript:void(0)" rel="me"><i class="fa fa-ellipsis-v" onclick="myFunction2()" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <!-- hidden 3 dots content -->
+    <section id="base3DotsNavHidden">
+        <div id="base3DotsContentsHidden">
+            <a href="#Dashboard">Chats</a>
+            <a href="#Appointment">Notifications</a>
+            <a href="#Prescriptions">Profile</a>
+            <button>Sign out</button>
+        </div>
+    </section>
+    <!--******************* mobile view ends here***************** -->
+    <!-- *********************** TopNavBar *******************************-->
+    <!-- **************    large screen view starts here *****************-->
+    <div id="baseTopNav">
+        <img id="caredocLogo" src="img/caredocLogo.png">
+        <!-- ******* SearchBar ***** -->
+        <div id="baseSearchbar">
+            <div id="left">
+                <span><i class="fa fa-calendar" aria-hidden="true"></i>
+                Date</span>
+            </div>
+            <div id="right">
+                <span>Filter by type</span>
+                <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+        </div>
+        <!-- *********Profile,Notification,Chats********** -->
+        <div id="baseProfile">
+            <img id="baseProfilePic" src="img/profilePic.png">
+            <span style="padding-top: 5px">James Smith</span>
+            <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div id="baseChat">
+            <i class="material-icons">notification_important_outline</i>
+        </div>
+        <div id="baseChat">
+            <i class="material-icons">chat_outline</i>
+        </div>
+        <div class="abc">
+            <div id="base3DotsIcon">
+                <a id="base3Dots" href="javascript:void(0)" rel="me"><i class="fa fa-ellipsis-v" onclick="myFunction2()" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- ***************** TopNav Ends Here! ************************** -->
+    <section id="baseMiddleContents">
+        <!-- Add Content Here!  -->
+        
+    <div class="chat-window">
+        <div class="copy">Send your URL to a friend to start a video call</div>
+        <div>
+            <video id="remoteVideo" style="display:inline-block;vertical-align: bottom" autoplay></video>
+            <video id="localVideo" style="display:inline-block;vertical-align: bottom" autoplay muted></video>
+            
+        </div>
+        <script src="js/script.js"></script>
+    </div>
+    </section>
+    <script>
+    // hamburger,cross toggle
+    $('#baseMenuBar').click(function() {
+        $(this).find('i').toggleClass('fa fa-bars fa fa-times')
+    });
+    // 3 dots,cross toggle
+    $('#base3Dots').click(function() {
+        $(this).find('i').toggleClass('fa fa-ellipsis-v fa fa-times')
+    });
+    </script>
+    <!-- display hidden -->
+    <script type="text/javascript">
+    function myFunction() {
+        document.getElementById("baseSideNav").classList.toggle("show");
+    }
+
+    function myFunction2() {
+        document.getElementById("base3DotsNavHidden").classList.toggle("show");
+    }
+    </script>
+    
+</body>
+
+</html>
